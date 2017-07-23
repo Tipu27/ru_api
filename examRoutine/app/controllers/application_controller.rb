@@ -4,7 +4,7 @@ include ActionController::HttpAuthentication::Token::ControllerMethods
   # Add a before_action to authenticate all requests.
   # Move this to subclassed controllers if you only
   # want to authenticate certain methods.
-  before_action :authenticate
+  before_action :authenticate unless Rails.env == "test"
 
   protected
 
